@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
 // 官方文档：https://react.docschina.org/tutorial/tutorial.html
 // 进阶参考：https://blog.csdn.net/xxdesky/article/details/103427340
@@ -11,7 +11,7 @@ function Square(props) {
     winnerClassName =
       props.winnerResult.winner &&
       props.winnerResult.winnerNumbers.some((number) => number === props.index)
-        ? "red"
+        ? 'red'
         : null;
   }
   return (
@@ -48,7 +48,7 @@ class Board extends React.Component {
       boardRows.push(
         <div key={squareCount} className="board-row">
           {squares}
-        </div>
+        </div>,
       );
     }
 
@@ -108,7 +108,7 @@ class Game extends React.Component {
     if (winnerResult || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? "X" : "O";
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       history: history.concat([
         {
@@ -156,14 +156,14 @@ class Game extends React.Component {
       [3, 3],
     ];
     const moves = history.map((step, move) => {
-      const desc = move ? "Go to move #" + move : "Go to game start";
+      const desc = move ? 'Go to move #' + move : 'Go to game start';
       let coordinate;
       if (this.state.clickedNumbers.length && move) {
         coordinate = `(${coordinates[this.state.clickedNumbers[move - 1]].join(
-          ", "
+          ', ',
         )})`;
       }
-      let className = this.state.stepNumber === move ? "bold" : null;
+      let className = this.state.stepNumber === move ? 'bold' : null;
       return (
         <li key={move} className={className}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -174,11 +174,11 @@ class Game extends React.Component {
 
     let status;
     if (winnerResult) {
-      status = "Winner：" + winnerResult.winner;
+      status = 'Winner：' + winnerResult.winner;
     } else if (this.state.stepNumber !== 9) {
-      status = `Next player：${this.state.xIsNext ? "X" : "O"}`;
+      status = `Next player：${this.state.xIsNext ? 'X' : 'O'}`;
     } else if (this.state.stepNumber === 9) {
-      status = "Draw";
+      status = 'Draw';
     }
 
     return (
@@ -204,4 +204,4 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<Game />, document.getElementById('root'));

@@ -1,5 +1,5 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font: 14px 'Century Gothic', Futura, sans-serif;
   margin: 20px;
 }
 
@@ -10,7 +10,7 @@ ul {
 
 .board-row:after {
   clear: both;
-  content: "";
+  content: '';
   display: table;
 }
 
@@ -50,9 +50,10 @@ ul {
   margin-left: 20px;
 }
 
-.bold{
+.bold {
   font-weight: bold;
 }
-.red{
+
+.red {
   color: red;
 }
