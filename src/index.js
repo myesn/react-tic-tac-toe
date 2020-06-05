@@ -15,7 +15,7 @@ function Square(props) {
         : null;
   }
   return (
-    <button key={props.index} className="square" onClick={props.onClick}>
+    <button className="square" onClick={props.onClick}>
       <span className={winnerClassName}>{props.value}</span>
     </button>
   );
